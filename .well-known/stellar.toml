@@ -9,97 +9,97 @@ ORG_DESCRIPTION="**XLM Cash** represents the future of digital finance, combinin
 [[CURRENCIES]]
 code="1ozSILVER"
 issuer="GBQN7NQZCS4RE4S5JROWXGSHIBGEMZNM65TVBPGU5GXSSJQ2GBTYGGPP"
-image="https://proxlm.site/images/1ozSILVER.png"
+image="https://xlmcash.github.io/images/1ozSILVER.png"
 conditions="Total Supply: 100,000,000,000"
 display_decimals=7
 
 [[CURRENCIES]]
 code="ARMYXLM"
 issuer="GBQN7NQZCS4RE4S5JROWXGSHIBGEMZNM65TVBPGU5GXSSJQ2GBTYGGPP"
-image="https://proxlm.site/images/ARMYXLM.png"
+image="https://xlmcash.github.io/images/ARMYXLM.png"
 conditions="Total Supply: 100,000,000,000"
 display_decimals=7
 
 [[CURRENCIES]]
 code="AUSILVER"
 issuer="GBQN7NQZCS4RE4S5JROWXGSHIBGEMZNM65TVBPGU5GXSSJQ2GBTYGGPP"
-image="https://proxlm.site/images/AUSILVER.png"
+image="https://xlmcash.github.io/images/AUSILVER.png"
 conditions="Total Supply: 100,000,000,000"
 display_decimals=7
 
 [[CURRENCIES]]
 code="EGG"
 issuer="GBQN7NQZCS4RE4S5JROWXGSHIBGEMZNM65TVBPGU5GXSSJQ2GBTYGGPP"
-image="https://proxlm.site/images/EGG.png"
+image="https://xlmcash.github.io/images/EGG.png"
 conditions="Total Supply: 100,000,000,000"
 display_decimals=7
 
 [[CURRENCIES]]
 code="JOHN"
 issuer="GBQN7NQZCS4RE4S5JROWXGSHIBGEMZNM65TVBPGU5GXSSJQ2GBTYGGPP"
-image="https://proxlm.site/images/JOHN.png"
+image="https://xlmcash.github.io/images/JOHN.png"
 conditions="Total Supply: 100,000,000,000"
 display_decimals=7
 
 [[CURRENCIES]]
 code="RLUSD"
 issuer="GBQN7NQZCS4RE4S5JROWXGSHIBGEMZNM65TVBPGU5GXSSJQ2GBTYGGPP"
-image="https://proxlm.site/images/RLUSD.png"
+image="https://xlmcash.github.io/images/RLUSD.png"
 conditions="Total Supply: 100,000,000,000"
 display_decimals=7
 
 [[CURRENCIES]]
 code="RUSILVER"
 issuer="GBQN7NQZCS4RE4S5JROWXGSHIBGEMZNM65TVBPGU5GXSSJQ2GBTYGGPP"
-image="https://proxlm.site/images/RUSILVER.png"
+image="https://xlmcash.github.io/images/RUSILVER.png"
 conditions="Total Supply: 100,000,000,000"
 display_decimals=7
 
 [[CURRENCIES]]
 code="USGold"
 issuer="GBQN7NQZCS4RE4S5JROWXGSHIBGEMZNM65TVBPGU5GXSSJQ2GBTYGGPP"
-image="https://proxlm.site/images/USGold.png"
+image="https://xlmcash.github.io/images/USGold.png"
 conditions="Total Supply: 100,000,000,000"
 display_decimals=7
 
 [[CURRENCIES]]
 code="XAGTOK"
 issuer="GBQN7NQZCS4RE4S5JROWXGSHIBGEMZNM65TVBPGU5GXSSJQ2GBTYGGPP"
-image="https://proxlm.site/images/XAGTOK.png"
+image="https://xlmcash.github.io/images/XAGTOK.png"
 conditions="Total Supply: 100,000,000,000"
 display_decimals=7
 
 [[CURRENCIES]]
 code="XLMUSD"
 issuer="GBQN7NQZCS4RE4S5JROWXGSHIBGEMZNM65TVBPGU5GXSSJQ2GBTYGGPP"
-image="https://proxlm.site/images/XLMUSD.png"
+image="https://xlmcash.github.io/images/XLMUSD.png"
 conditions="Total Supply: 100,000,000,000"
 display_decimals=7
 
 [[CURRENCIES]]
 code="wSHX"
 issuer="GBQN7NQZCS4RE4S5JROWXGSHIBGEMZNM65TVBPGU5GXSSJQ2GBTYGGPP"
-image="https://proxlm.site/images/wSHX.png"
+image="https://xlmcash.github.io/images/wSHX.png"
 conditions="Total Supply: 100,000,000,000"
 display_decimals=7
 
 [[CURRENCIES]]
 code="wXXA"
 issuer="GBQN7NQZCS4RE4S5JROWXGSHIBGEMZNM65TVBPGU5GXSSJQ2GBTYGGPP"
-image="https://proxlm.site/images/wXXA.png"
+image="https://xlmcash.github.io/images/wXXA.png"
 conditions="Total Supply: 100,000,000,000"
 display_decimals=7
 
 [[CURRENCIES]]
 code="yXDC"
 issuer="GBQN7NQZCS4RE4S5JROWXGSHIBGEMZNM65TVBPGU5GXSSJQ2GBTYGGPP"
-image="https://proxlm.site/images/yXDC.png"
+image="https://xlmcash.github.io/images/yXDC.png"
 conditions="Total Supply: 100,000,000,000"
 display_decimals=7
 
 [[CURRENCIES]]
 code="yXRP"
 issuer="GBQN7NQZCS4RE4S5JROWXGSHIBGEMZNM65TVBPGU5GXSSJQ2GBTYGGPP"
-image="https://proxlm.site/images/yXRP.png"
+image="https://xlmcash.github.io/images/yXRP.png"
 conditions="Total Supply: 100,000,000,000"
 display_decimals=7
