@@ -1,0 +1,106 @@
+NETWORK_PASSPHRASE="Public Global Stellar Network ; September 2015"
+
+[DOCUMENTATION]
+ORG_NAME="PROXLM"
+ORG_URL="https://proxlm.site"
+ORG_OFFICIAL_EMAIL="info@proxlm.site"
+ORG_LOGO="https://proxlm.site/images/logo.png"
+ORG_DESCRIPTION="Professional Stellar Tokens on DeFi"
+
+[[CURRENCIES]]
+code="1ozSILVER"
+issuer="GBQN7NQZCS4RE4S5JROWXGSHIBGEMZNM65TVBPGU5GXSSJQ2GBTYGGPP"
+image="https://proxlm.site/images/1ozSILVER.png"
+conditions="Total Supply: 100,000,000,000"
+display_decimals=7
+
+[[CURRENCIES]]
+code="ARMYXLM"
+issuer="GBQN7NQZCS4RE4S5JROWXGSHIBGEMZNM65TVBPGU5GXSSJQ2GBTYGGPP"
+image="https://proxlm.site/images/ARMYXLM.png"
+conditions="Total Supply: 100,000,000,000"
+display_decimals=7
+
+[[CURRENCIES]]
+code="AUSILVER"
+issuer="GBQN7NQZCS4RE4S5JROWXGSHIBGEMZNM65TVBPGU5GXSSJQ2GBTYGGPP"
+image="https://proxlm.site/images/AUSILVER.png"
+conditions="Total Supply: 100,000,000,000"
+display_decimals=7
+
+[[CURRENCIES]]
+code="EGG"
+issuer="GBQN7NQZCS4RE4S5JROWXGSHIBGEMZNM65TVBPGU5GXSSJQ2GBTYGGPP"
+image="https://proxlm.site/images/EGG.png"
+conditions="Total Supply: 100,000,000,000"
+display_decimals=7
+
+[[CURRENCIES]]
+code="JOHN"
+issuer="GBQN7NQZCS4RE4S5JROWXGSHIBGEMZNM65TVBPGU5GXSSJQ2GBTYGGPP"
+image="https://proxlm.site/images/JOHN.png"
+conditions="Total Supply: 100,000,000,000"
+display_decimals=7
+
+[[CURRENCIES]]
+code="RLUSD"
+issuer="GBQN7NQZCS4RE4S5JROWXGSHIBGEMZNM65TVBPGU5GXSSJQ2GBTYGGPP"
+image="https://proxlm.site/images/RLUSD.png"
+conditions="Total Supply: 100,000,000,000"
+display_decimals=7
+
+[[CURRENCIES]]
+code="RUSILVER"
+issuer="GBQN7NQZCS4RE4S5JROWXGSHIBGEMZNM65TVBPGU5GXSSJQ2GBTYGGPP"
+image="https://proxlm.site/images/RUSILVER.png"
+conditions="Total Supply: 100,000,000,000"
+display_decimals=7
+
+[[CURRENCIES]]
+code="USGold"
+issuer="GBQN7NQZCS4RE4S5JROWXGSHIBGEMZNM65TVBPGU5GXSSJQ2GBTYGGPP"
+image="https://proxlm.site/images/USGold.png"
+conditions="Total Supply: 100,000,000,000"
+display_decimals=7
+
+[[CURRENCIES]]
+code="XAGTOK"
+issuer="GBQN7NQZCS4RE4S5JROWXGSHIBGEMZNM65TVBPGU5GXSSJQ2GBTYGGPP"
+image="https://proxlm.site/images/XAGTOK.png"
+conditions="Total Supply: 100,000,000,000"
+display_decimals=7
+
+[[CURRENCIES]]
+code="XLMUSD"
+issuer="GBQN7NQZCS4RE4S5JROWXGSHIBGEMZNM65TVBPGU5GXSSJQ2GBTYGGPP"
+image="https://proxlm.site/images/XLMUSD.png"
+conditions="Total Supply: 100,000,000,000"
+display_decimals=7
+
+[[CURRENCIES]]
+code="wSHX"
+issuer="GBQN7NQZCS4RE4S5JROWXGSHIBGEMZNM65TVBPGU5GXSSJQ2GBTYGGPP"
+image="https://proxlm.site/images/wSHX.png"
+conditions="Total Supply: 100,000,000,000"
+display_decimals=7
+
+[[CURRENCIES]]
+code="wXXA"
+issuer="GBQN7NQZCS4RE4S5JROWXGSHIBGEMZNM65TVBPGU5GXSSJQ2GBTYGGPP"
+image="https://proxlm.site/images/wXXA.png"
+conditions="Total Supply: 100,000,000,000"
+display_decimals=7
+
+[[CURRENCIES]]
+code="yXDC"
+issuer="GBQN7NQZCS4RE4S5JROWXGSHIBGEMZNM65TVBPGU5GXSSJQ2GBTYGGPP"
+image="https://proxlm.site/images/yXDC.png"
+conditions="Total Supply: 100,000,000,000"
+display_decimals=7
+
+[[CURRENCIES]]
+code="yXRP"
+issuer="GBQN7NQZCS4RE4S5JROWXGSHIBGEMZNM65TVBPGU5GXSSJQ2GBTYGGPP"
+image="https://proxlm.site/images/yXRP.png"
+conditions="Total Supply: 100,000,000,000"
+display_decimals=7
