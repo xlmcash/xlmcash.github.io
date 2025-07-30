@@ -1,11 +1,10 @@
 NETWORK_PASSPHRASE="Public Global Stellar Network ; September 2015"
 
 [DOCUMENTATION]
-ORG_NAME="PROXLM"
-ORG_URL="https://proxlm.site"
-ORG_OFFICIAL_EMAIL="info@proxlm.site"
-ORG_LOGO="https://proxlm.site/images/logo.png"
-ORG_DESCRIPTION="Professional Stellar Tokens on DeFi"
+ORG_NAME="XLMCASH"
+ORG_URL="https://xlmcash.github.io"
+ORG_LOGO="https://xlmcash.github.io/images/logo.png"
+ORG_DESCRIPTION="**XLM Cash** represents the future of digital finance, combining the security and transparency of blockchain technology with the accessibility and convenience of modern financial services."
 
 [[CURRENCIES]]
 code="1ozSILVER"
