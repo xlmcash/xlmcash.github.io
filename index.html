@@ -3,55 +3,828 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
+    <title>XLMCASH | Stellar Blockchain Assets</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f5f5f5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        :root {
+            --primary: #2962ff;
+            --secondary: #00bcd4;
+            --dark: #0a192f;
+            --light: #f8f9fa;
+            --success: #4caf50;
+            --warning: #ff9800;
+            --danger: #f44336;
+        }
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f8ff;
             color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
         .container {
-            text-align: center;
-            padding: 2rem;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #4a90e2;
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.5rem 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
         }
-        p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        .logo i {
+            margin-right: 10px;
+            color: #fff;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        nav ul li a:hover {
+            opacity: 0.8;
+        }
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width 0.3s;
+        }
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .hero {
+            padding: 10rem 0 5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://stellar.org/wp-content/uploads/2021/05/stellar-network-animation.gif') center/cover no-repeat;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInDown 1s ease;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: white;
+            color: var(--primary);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            animation: fadeIn 1s ease;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+        }
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            margin-left: 1rem;
+        }
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
+        .section {
+            padding: 5rem 0;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+        }
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            bottom: -10px;
+            left: 25%;
+            border-radius: 2px;
+        }
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 1rem auto 0;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        .feature-card i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        .feature-card p {
+            color: #666;
+        }
+        .about {
+            background: #f5f8ff;
+        }
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .about-text h3 {
+            font-size: 2rem;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+        }
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+        .about-image {
+            position: relative;
+            text-align: center;
+        }
+        .stellar-animation {
+            width: 100%;
+            max-width: 400px;
+            height: 400px;
+            background: url('https://stellar.org/wp-content/uploads/2021/05/stellar-animation-2.gif') center/contain no-repeat;
+            margin: 0 auto;
+            animation: float 6s ease-in-out infinite;
+        }
+        .assets {
+            background: white;
+        }
+        .asset-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .asset-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        .asset-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        .asset-image {
+            height: 150px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .asset-image i {
+            font-size: 4rem;
+            color: white;
+        }
+        .asset-info {
+            padding: 1.5rem;
+        }
+        .asset-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        .asset-info p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        .price-chart {
+            background: #f5f8ff;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 3rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        .chart-container {
+            width: 100%;
+            height: 300px;
+        }
+        .cta {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://stellar.org/wp-content/uploads/2021/05/stellar-network-animation-2.gif') center/cover no-repeat;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0 0;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
             margin-bottom: 2rem;
         }
-        .logo svg {
-            width: 100px;
-            height: 100px;
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 3px;
+            background: var(--primary);
+            bottom: -10px;
+            left: 0;
+        }
+        .footer-column ul {
+            list-style: none;
+        }
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+        .footer-column ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .footer-column ul li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+        .footer-bottom {
+            text-align: center;
+            padding: 1rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Responsive styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            .about-image {
+                order: -1;
+            }
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--dark);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.5s ease;
+            }
+            nav ul.active {
+                left: 0;
+            }
+            nav ul li {
+                margin: 1rem 0;
+            }
+            .mobile-menu {
+                display: block;
+            }
+            .hero {
+                padding: 8rem 0 4rem;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .section {
+                padding: 3rem 0;
+            }
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            .btn {
+                padding: 0.6rem 1.5rem;
+            }
+        }
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .btn {
+                display: block;
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+            .btn-outline {
+                margin-left: 0;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="logo">
-            <!-- Simple logo placeholder -->
-            <svg viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="45" fill="#4a90e2" opacity="0.8"/>
-                <text x="50" y="55" text-anchor="middle" fill="white" font-size="40" font-weight="bold">S</text>
-            </svg>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-coins"></i>
+                <span>XLMCASH</span>
+            </div>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#assets">Assets</a></li>
+                    <li><a href="#chart">XLM Price</a></li>
+                </ul>
+                <div class="mobile-menu" id="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
         </div>
-        <h1>Coming Soon</h1>
-        <p>We're working hard to bring you something amazing. Stay tuned!</p>
-    </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Discover the Power of Stellar Blockchain</h1>
+            <p>XLMCASH brings you seamless access to amazing assets on the Stellar network. Fast, secure, and built for the future of finance.</p>
+            <div>
+                <a href="https://stellarterm.com" target="_blank" class="btn btn-primary">Explore StellarTerm</a>
+                <a href="#assets" class="btn btn-outline">View Assets</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Stellar?</h2>
+                <p>The Stellar network is designed to connect people, payment systems, and banks with unmatched speed and efficiency.</p>
+            </div>
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Fast Transactions</h3>
+                    <p>Stellar confirms transactions in 3-5 seconds with minimal fees. Cross-border payments happen in near real-time.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-lock"></i>
+                    <h3>Secure Network</h3>
+                    <p>Built on a decentralized, open-source blockchain with proven security and uptime for financial applications.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Global Reach</h3>
+                    <p>Access a growing ecosystem of tokens, stablecoins, and assets from around the world on a single network.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>About XLMCASH and Stellar</h3>
+                    <p>XLMCASH is your gateway to the Stellar ecosystem, providing tools and resources to help you navigate the world of digital assets on this revolutionary blockchain.</p>
+                    <p>The Stellar network is a decentralized protocol that enables you to send and receive money in different currencies quickly and reliably. It connects people, payment systems, and banks with the goal of making financial services more accessible.</p>
+                    <p>Built for scalability and financial inclusion, Stellar offers features like multi-currency transactions, asset issuance, and decentralized exchange all on a single network.</p>
+                    <a href="https://stellar.org" target="_blank" class="btn btn-primary">Learn More About Stellar</a>
+                </div>
+                <div class="about-image">
+                    <div class="stellar-animation"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section assets" id="assets">
+        <div class="container">
+            <div class="section-title">
+                <h2>Discover Amazing Assets</h2>
+                <p>These are some of the most popular assets available on the Stellar network that you can trade via StellarTerm.</p>
+            </div>
+            <div class="asset-list">
+                <div class="asset-card">
+                    <div class="asset-image">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="asset-info">
+                        <h3>USDC</h3>
+                        <p>USD Coin - A fully regulated dollar digital stablecoin issued by Circle.</p>
+                        <a href="https://stellarterm.com/#exchange/XLM-native/USDC-GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN" target="_blank" class="btn btn-primary">Trade on StellarTerm</a>
+                    </div>
+                </div>
+                <div class="asset-card">
+                    <div class="asset-image">
+                        <i class="fab fa-bitcoin"></i>
+                    </div>
+                    <div class="asset-info">
+                        <h3>BTC</h3>
+                        <p>Bitcoin - The first decentralized digital currency on the Stellar network.</p>
+                        <a href="https://stellarterm.com/#exchange/XLM-native/BTC-GAUTUYY2THLF7SGITDFMXJVYH3LHDSMGEAKSBU267M2K7A3W543CKUEF" target="_blank" class="btn btn-primary">Trade on StellarTerm</a>
+                    </div>
+                </div>
+                <div class="asset-card">
+                    <div class="asset-image">
+                        <i class="fas fa-euro-sign"></i>
+                    </div>
+                    <div class="asset-info">
+                        <h3>EURT</h3>
+                        <p>Tether EUR - A euro stablecoin that is built on the Stellar blockchain.</p>
+                        <a href="https://stellarterm.com/#exchange/XLM-native/EURT-GAP5LETOV6YIE62YAM56STDANPRDO7ZFDBGSNHJQIYGGKSMOZAHOOS2S" target="_blank" class="btn btn-primary">Trade on StellarTerm</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="chart">
+        <div class="container">
+            <div class="section-title">
+                <h2>XLM Price Chart</h2>
+                <p>Track the latest price movements of Stellar Lumens (XLM) against the US Dollar.</p>
+            </div>
+            <div class="price-chart">
+                <div class="chart-container">
+                    <canvas id="priceChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container cta-content">
+            <h2>Ready to Explore the Stellar Ecosystem?</h2>
+            <p>Get started with XLMCASH today and join the future of borderless finance on the Stellar network.</p>
+            <div>
+                <a href="https://stellarterm.com" target="_blank" class="btn btn-primary">Launch StellarTerm</a>
+                <a href="https://stellar.org/developers" target="_blank" class="btn btn-outline">Developer Resources</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>XLMCASH</h3>
+                    <p>Your gateway to the Stellar ecosystem, providing tools and resources for digital asset management.</p>
+                    <div class="social-links">
+                        <a href="https://twitter.com/StellarOrg" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.youtube.com/c/StellarOrg" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://t.me/stellarchat" target="_blank"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#assets">Assets</a></li>
+                        <li><a href="#chart">XLM Price</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="https://stellar.org" target="_blank">Stellar Website</a></li>
+                        <li><a href="https://stellar.org/developers" target="_blank">Developer Docs</a></li>
+                        <li><a href="https://stellarterm.com" target="_blank">StellarTerm</a></li>
+                        <li><a href="https://stellar.expert" target="_blank">Stellar Expert</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Community</h3>
+                    <ul>
+                        <li><a href="https://community.stellar.org" target="_blank">Community Forum</a></li>
+                        <li><a href="https://twitter.com/StellarOrg" target="_blank">Twitter</a></li>
+                        <li><a href="https://www.reddit.com/r/Stellar" target="_blank">Reddit</a></li>
+                        <li><a href="https://github.com/stellar" target="_blank">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 XLMCASH. All rights reserved. Stellar and Stellar Lumens are trademarks of Stellar Development Foundation.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+       
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+               
+                // Close mobile menu if open
+                navMenu.classList.remove('active');
+               
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Price chart using Chart.js
+        const ctx = document.getElementById('priceChart').getContext('2d');
+
+        // Fetch XLM price data (mock data for demo - in production use real API)
+        async function fetchXLMPriceData() {
+            try {
+                // In a real application, you would fetch from a cryptocurrency API
+                // For demo purposes, we'll use mock data
+                const mockData = {
+                    labels: Array.from({length: 30}, (_, i) => {
+                        const date = new Date();
+                        date.setDate(date.getDate() - 30 + i);
+                        return date.toLocaleDateString();
+                    }),
+                    prices: Array.from({length: 30}, () => Math.random() * 0.3 + 0.1)
+                };
+               
+                return mockData;
+            } catch (error) {
+                console.error('Error fetching price data:', error);
+                return {
+                    labels: [],
+                    prices: []
+                };
+            }
+        }
+
+        // Initialize chart
+        async function initChart() {
+            const priceData = await fetchXLMPriceData();
+           
+            const chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: priceData.labels,
+                    datasets: [{
+                        label: 'XLM/USD',
+                        data: priceData.prices,
+                        borderColor: '#2962ff',
+                        backgroundColor: 'rgba(41, 98, 255, 0.1)',
+                        borderWidth: 2,
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false,
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: false
+                        }
+                    }
+                }
+            });
+        }
+
+        // Initialize the chart when the page loads
+        document.addEventListener('DOMContentLoaded', initChart);
+
+        // Floating animation for elements
+        function animateElements() {
+            const elements = document.querySelectorAll('.feature-card, .asset-card');
+           
+            function animate() {
+                elements.forEach((element, index) => {
+                    const delay = index * 100;
+                    setTimeout(() => {
+                        element.style.animation = 'fadeInUp 0.5s ease forwards';
+                    }, delay);
+                });
+            }
+           
+            // Check if elements are in viewport then animate
+            function checkElements() {
+                const windowHeight = window.innerHeight;
+               
+                elements.forEach(element => {
+                    const elementPos = element.getBoundingClientRect().top;
+                   
+                    if (elementPos < windowHeight - 100) {
+                        element.style.opacity = '1';
+                    }
+                });
+            }
+           
+            // Initial check and scroll event listener
+            checkElements();
+            window.addEventListener('scroll', checkElements);
+        }
+
+        animateElements();
+    </script>
 </body>
-</html>
+</html> 
